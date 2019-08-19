@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div> -->
+    <div class="col-md-9 mx-auto d-block">
+      <!-- each sallon row repeating  -->
+        <div class="card shadow each-saloon" *ngFor="let x of data;">
+            <div class="card-body">
+    
+              <div class="row saloon-row">
+                <div class="col-4">
+                  <img src="http://modkhalid.pythonanywhere.com{{x.image}}" class="img-fluid img-thumbnail saloon-image" alt="..." >
+                </div>
+                <div class="col-8">
+                  <h4><b>{{x.name}}</b></h4>
+                  <h6>{{x.ad_first}},{{x.ad_second}},<b>{{x.city}},{{x.pincode}}</b></h6>
+                  <p style="font-size: 12px;"><span class="badge badge-pill badge-success">5 STAR</span> (20 rating) .Good</p>
+                  <p><a href="mailto:{{x.email}}">{{x.email}}</a></p>
+                  <p><a href="tel:{{x.phone_number}}">{{x.phone_number}}</a></p>
+                  <div class="mt-4">
+                      <button class="btn btn-light border" routerLink='/saloon/{{x.saloon_id}}'><b>View Details</b></button>
+                      <button class="btn btn-success ml-3 border"><b>Book Now</b></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- end each card -->
+          
+
+          
+    </div>
+  </div>
+</div>

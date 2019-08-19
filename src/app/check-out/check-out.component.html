@@ -1,0 +1,30 @@
+<div class="container-fluid" style="margin-top: 0px;padding-top:0px;">
+  <div class="row">
+    <!-- <div class="col-md-3">
+        <ul class="list-group" >
+          <li class="list-group-item d-flex justify-content-between align-items-center" (click)="changeCat('new-order')">
+            New Order recieved
+            <span class="badge badge-primary badge-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center"  (click)="changeCat('old-order')">
+            Old Order recieved
+            <span class="badge badge-primary badge-pill">2</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center " (click)="changeCat('all')">
+            All Order
+            <span class="badge badge-primary badge-pill">1</span>
+          </li>
+        </ul>
+    </div> -->
+    <div class="col-md-8 mx-auto d-block">
+        <app-new-order [data]="order_data"></app-new-order>
+        
+        
+    </div>
+  </div>
+</div>
+
+<li class="list-group-item d-flex justify-content-between align-items-center" (click)="changeCat('new-order')">
+    New Order recieved
+    <span class="badge badge-primary badge-pill">14</span>
+  </li>

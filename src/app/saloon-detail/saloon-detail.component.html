@@ -1,0 +1,90 @@
+<div class="container-fluid bg-muted" style="margin-top: 20px;">
+        <div class="container">
+          <!-- <div class="row "> -->
+      
+            <div class="card shadow salon-card p-4" *ngIf="data">
+              <div class="row">
+                  <div class="col-md-4">
+                      <img class="img-fluid img-thumbnail salon-image" src="https://content3.jdmagicbox.com/comp/roorkee/y5/9999p1332.1332.171025100011.x7y5/catalogue/look-9-beauty-salon-roorkee-v4ly1.jpg" alt="">
+                    </div>
+                    <div class="col-md-8">
+                      <h3 class=""><b>{{data.name}}</b></h3>
+                      <p><b class="text-secondary pt-2">{{data.ad_first}}, {{data.ad_second}}, {{data.city}},{{data.pincode}} </b></p>
+                      <hr>
+      
+                      <div class="row pt-3">
+                        <div class="col-sm-4">
+                            <button class="btn btn-primary border" routerLink=''><b>call +91 {{data.phone_number}} </b></button>
+                        </div>
+                        <div class="col-sm-4">
+                          <a class="btn btn-white" href="mailto:{{data.email}}">{{data.email}}</a>
+                          <a class="btn btn-white" routerLink="/product">add item</a>
+                        </div>
+                        <div class="col-sm-4">
+                          <button class="btn btn-success border" routerLink='/saloon/{{data.saloon_id}}'><b>Book Now</b></button>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <!--description  card end here  -->
+
+
+
+
+
+
+
+
+
+
+
+            
+      
+            <div class="row">
+              <!-- product specification -->
+              <div class="col-md-7">
+                <h4 class="mt-4 mb-2"><b>Hair&Cut</b></h4>
+                <!-- each product -->
+                <div class="card-body shadow mt-2 w3-border" *ngFor="let product of products;">
+                  <!-- <div class="card-body"> -->
+                      <p><b>{{product.title}}</b></p>
+                      <button class="btn btn-outline-danger btn-sm" >Rs.{{product.price}}</button>
+                      
+                        <button type="button" class="btn btn-outline-success  w3-right"(click)="add(product)"><b>ADD</b></button>
+                        
+                  <!-- </div> -->
+                </div>
+                <!-- each product end -->
+                
+                 
+                
+              </div>
+              <!-- product specification end -->
+              <!-- payment and cart start -->
+              
+              <div class="col-md-5">
+                  <div class="card shadow-sm mt-5">
+                    <div class="card-header bg-success text-white">
+                        <b>Added to Cart</b>
+                    </div>
+                    <div class="card-body shadow mt-2 w3-border" *ngFor="let add_product of added_products;last as l;">
+                          <p><b>{{add_product.title}}</b></p>
+                          <button class="btn btn-outline-success btn-sm" >Rs.{{add_product.price}}</button>
+                          <button type="button" class="btn btn-outline-danger  w3-right" (click)="remove(add_product)"><b>Delete</b></button>
+
+                    </div>
+                    <div class="card-footer" *ngIf="size>1">
+                      <button class="btn-lg btn-primary  mx-auto d-block" (click)="orderNow()"><b>Order Now</b></button>
+                    </div>
+                    <!-- each product end -->
+                    </div>
+              </div>
+              <!-- payment and cart end -->
+            </div>
+      
+        </div>
+        <!-- container end -->
+      </div>
+      <!-- fluid end -->
+  

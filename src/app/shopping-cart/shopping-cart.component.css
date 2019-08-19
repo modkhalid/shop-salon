@@ -1,0 +1,15 @@
+.saloon-row{
+    /* height: 250px; */
+    /* font-family: "Courier New", Courier, monospace; */
+    font-family: 'Nunito Sans', sans-serif;
+    
+}
+.saloon-image{
+    height:250px;
+}
+.border{
+    border: 1px solid black;
+}
+.each-saloon{
+    margin-top: 10px;
+}

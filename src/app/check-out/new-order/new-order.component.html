@@ -1,0 +1,17 @@
+
+<div *ngFor="let item of data; odd as o;" class="m-2 shadow text-mod ">
+  <a   class="list-group-item list-group-item-action flex-column align-items-start p-3" [style.backgroundColor]="item.is_visited=='0'?'#EEEEEE':'white'" >
+    <div class="d-flex w-100 justify-content-between">
+      <h5 ><b>An order for {{item.product[0].title}} - in {{item.product[0].category}}</b></h5>
+      <small>{{item.time}}</small>
+    </div>
+    <p>price for {{item.product[0].title}} <b>{{item.product[0].price}}.00 Rupees</b></p>
+    <p class="mb-3">{{item.name}} booked for above order from {{item.city}}.Please call {{item.name}} on below contact
+    </p>
+      <a href="tel:{{item.phone_number}}" class="btn btn-success btn-sm">{{item.phone_number}}</a>
+      <a href="mailto:{{item.email}}" class="btn btn-outline-primary btn-sm ml-2"> mail:{{item.email}}</a>
+      <button class="btn btn-sm btn-outline-danger w3-right" *ngIf="item.is_visited=='0'" (click)="markAsRead(item.order_id,$event)">mrk as read</button>
+    
+    <!-- </small> -->
+  </a>
+</div>

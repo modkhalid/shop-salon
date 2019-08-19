@@ -1,0 +1,54 @@
+<div *ngIf="success; then registered else form1"></div>
+<ng-template #form1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto d-block">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div  class="form-group">
+            <label for="name1">Title</label>
+            <input 
+              formControlName="title" 
+              type="text" 
+              class="form-control" 
+              placeholder="eg. Hair Curt"
+              id="name1" 
+              >
+          </div>
+          <div  class="form-group">
+            <label for="phone_number">price</label>
+            <input 
+              formControlName="price" 
+              type="number" 
+              class="form-control" 
+               id="phone_number">
+          </div>
+          <div  class="form-group">
+            <label for="name1">Title</label>
+            <input 
+              formControlName="category" 
+              type="text" 
+              class="form-control" 
+              placeholder="eg. message,cutting etc."
+              id="name1" 
+              >
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #registered>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto d-block">
+        <div class="card shadow">
+          <div class="card-body">
+            <h3>You have succesfully upload an item.</h3>
+            <a (click)="success=false;" style="cursor: pointer;color:cadetblue">insert one more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

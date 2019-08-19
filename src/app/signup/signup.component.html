@@ -1,0 +1,147 @@
+<div *ngIf="success; then registered else form1"></div>
+<ng-template #form1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto d-block card shadow p-5">
+        <h1 class="text-primary alert-secondary constainer">Register your Saloon in one step</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div  class="form-group">
+            <label for="name1">Name</label>
+            <input 
+              formControlName="name" 
+              type="text" 
+              class="form-control" 
+              id="name1" 
+              >
+          </div>
+          <div  class="form-group">
+            <label for="phone_number">phone number</label>
+            <input 
+              formControlName="phone_number" 
+              type="text" 
+              class="form-control" 
+               id="phone_number">
+          </div>
+          <div class="form-group">
+            <label 
+              for="emai">
+                Email address
+            </label>
+            <input 
+              formControlName="email" 
+              type="email" 
+              class="form-control" 
+              id="email"
+              >
+          </div>
+          <div class="form-group">
+            <label 
+              for="pass"
+            >
+              Password
+            </label>
+            <input 
+              formControlName="password" 
+              type="password" 
+              class="form-control" 
+              id="pass" 
+              >
+          </div>
+          <div class="form-group">
+            <label for="cpass">
+              Password
+            </label>
+            <input 
+              formControlName="cpassword" 
+              type="password" 
+              class="form-control" 
+              id="cpass" 
+             >
+          </div>
+          
+  
+          <div  class="form-group">
+            <label for="ad_1">first line address</label>
+            <input 
+              formControlName="ad_first" 
+              type="text" 
+              class="form-control" 
+               id="ad_1"
+             >
+          </div>
+          <div  class="form-group">
+            <label for="ad_1">Second line address</label>
+            <input 
+              formControlName="ad_second" 
+              type="text" 
+              class="form-control" 
+               id="ad_2"
+              >
+          </div>
+  
+          <div  class="form-group">
+            <label for="city">city,state</label>
+            <input 
+              formControlName="city" 
+              type="text" 
+              class="form-control" 
+               id="city"
+              >
+          </div>
+  
+  
+          <div  class="form-group">
+            <label for="image">Backgroung Image</label>
+            <input 
+             
+              type="file" 
+              class="form-control" 
+               id="image"
+               #file
+               (change)="onChange($event)"
+              >
+          </div>
+  
+  
+          <div  class="form-group">
+            <label for="pincode">Pincode</label>
+            <input 
+              formControlName="pincode" 
+              type="text" 
+              class="form-control" 
+               id="pincode"
+              >
+          </div>
+          <div  class="form-group">
+            <label for="country">Country</label>
+            <input 
+              formControlName="country" 
+              type="text" 
+              class="form-control" 
+               id="country"
+             >
+          </div>
+  
+          
+  
+  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #registered>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto d-block">
+        <div class="card shadow">
+          <div class="card-body">
+            <h3>You have succesfully resgitered your coaching</h3>
+            <a routerLink="/login">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
